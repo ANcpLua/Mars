@@ -13,6 +13,25 @@ Part of the Software Architecture course exercise collection.
 
 ## Exercises
 
+### Exercise 0: Architectural Decisions and Quality Attributes
+**Type:** Class Group Exercise | **Topic:** Decision-Making
+
+**Problem:** Which architectural decisions are hard to change, and which quality attributes do they impact most?
+
+**What you'll learn:**
+- Relationship between architectural decisions and non-functional requirements
+- How decisions impact multiple quality attributes simultaneously
+- Why architects are requirements engineers for non-functional requirements
+- Which "-ility" (changeability, efficiency, security, etc.) appears most frequently
+
+**Files:**
+- [Exercise Overview](00-architectural-decisions-exercise/README.md)
+- [Slide Images](00-architectural-decisions-exercise/)
+
+**Key Insight:** Architectural decisions often influence non-functional aspects of software. This is why architects often are the requirements engineers for non-functional requirements.
+
+---
+
 ### Exercise 1: Charts/Products Architecture Analysis
 **Exercise ID:** ArchitecturalQuality10 | **Evening:** 2 | **Type:** Group
 
@@ -100,6 +119,10 @@ python -m pytest test_mars_moon_core.py
 Mars/
 ├── README.md                                  # This file
 ├── mars_moon_core.py                          # Wrapper script
+├── 00-architectural-decisions-exercise/
+│   ├── README.md                              # Exercise overview
+│   ├── slide_architectural_decisions_01.png   # Exercise slide
+│   └── slide_architectural_decisions_02.png   # Exercise slide (duplicate)
 ├── 01-architecture-real-life-story/
 │   ├── architectural-principles-analysis.md   # ArchitecturalQuality10
 │   └── class-group-exercise-architecture-real-life-story.pdf
@@ -125,6 +148,8 @@ Mars/
 - SAP (Stable Abstractions Principle)
 
 **Skills:**
+- Architectural decision analysis and impact assessment
+- Non-functional requirements engineering
 - Dependency management and stability analysis
 - Change frequency analysis
 - Application core design with pure functions

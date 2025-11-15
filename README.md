@@ -1,5 +1,13 @@
 # Mars Moon Visibility Calculator
 
+> [!IMPORTANT]
+> **This repository has been archived.** All exercises are now consolidated in the [Software-Architecture](https://github.com/ANcpLua/Software-Architecture) repository for easier navigation.
+>
+> **Find Mars exercises at:**
+> - Evening 2: [Climate Model Analysis](https://github.com/ANcpLua/Software-Architecture/tree/main/evening-2/02-climate-model-analysis)
+> - Evening 2: [Charts/Products Architecture](https://github.com/ANcpLua/Software-Architecture/tree/main/evening-2/01-architecture-real-life-story)
+> - Evening 3: [Mars Moons Application Core](https://github.com/ANcpLua/Software-Architecture/tree/main/evening-3/03-mars-moons-application-core)
+
 A Python application that calculates joint visibility windows for Mars' moons Deimos and Phobos.
 
 Part of the Software Architecture course exercise collection.
