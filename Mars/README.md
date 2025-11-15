@@ -2,26 +2,37 @@
 
 Professional software architecture analysis demonstrating SOLID principles, dependency management, and clean architecture patterns through three real-world case studies.
 
+Part of the Software Architecture course exercise collection.
+
+## Table of Contents
+
+- [Exercises](#exercises)
+- [Running the Code](#running-the-code)
+- [Directory Structure](#directory-structure)
+- [Key Learning Outcomes](#key-learning-outcomes)
+
 ## Exercises
 
-### 1. Charts/Products Architecture Analysis
-**Exercise ID:** ArchitecturalQuality10
+### Exercise 1: Charts/Products Architecture Analysis
+**Exercise ID:** ArchitecturalQuality10 | **Evening:** 2 | **Type:** Group
 
-[Read full analysis →](01-architecture-real-life-story/architectural-principles-analysis.md)
-
-**Problem:** A legacy system with mixed responsibilities (charts + financial logic) and duplicated code across products.
+**Problem:** Legacy system with mixed responsibilities (charts + financial logic) and duplicated code across products.
 
 **What you'll learn:**
 - Identifying architectural smells: SRP, CCP, DIP, SDP, SAP violations
 - Refactoring to clean separation with stable abstractions
 - Arrow Legend: Dark blue (normal dependencies) vs orange dashed (violations)
 
-### 2. Climate Model Architecture Analysis
-**Exercise ID:** ArchitecturalQuality08
+**Files:**
+- [Architecture Analysis](01-architecture-real-life-story/architectural-principles-analysis.md)
+- [Exercise PDF](01-architecture-real-life-story/class-group-exercise-architecture-real-life-story.pdf)
 
-[Read full analysis →](02-climate-model-analysis/climate-model-analysis.md)
+---
 
-**Problem:** A climate model system with 9 components exhibiting unstable dependencies and high change rates.
+### Exercise 2: Climate Model Architecture Analysis
+**Exercise ID:** ArchitecturalQuality08 | **Evening:** 2 | **Type:** Group
+
+**Problem:** Climate model system with 9 components exhibiting unstable dependencies and high change rates.
 
 **What you'll learn:**
 - Change frequency analysis (1x to 150x changes/year)
@@ -29,76 +40,94 @@ Professional software architecture analysis demonstrating SOLID principles, depe
 - Impact analysis of architectural weaknesses
 - Arrow Legend: Dark blue (normal dependencies) vs orange dashed (violations)
 
-### 3. Mars Moons Application Core
-**Exercise ID:** Mars02
+**Files:**
+- [Climate Model Analysis](02-climate-model-analysis/climate-model-analysis.md)
+- [Exercise PDF](02-climate-model-analysis/group-exercise-climate-model.pdf)
 
-[Read full design →](03-mars-moons-application-core/application-core-design.md)
+---
+
+### Exercise 3: Mars Moons Application Core
+**Exercise ID:** Mars02 | **Evening:** 3 | **Type:** Home
 
 **Problem:** Calculate joint visibility time of Mars moons (Deimos and Phobos) with clean architecture.
 
 **What you'll learn:**
 - Stateless component design with pure functions
-- Single responsibility principle in practice
+- Single Responsibility Principle in practice
 - 4-layer pipeline architecture (Parser → Normalizer → Calculator → Extractor)
 - Handling Mars-specific time system (25h × 100min/day)
 
+**Files:**
+- [Application Core Design](03-mars-moons-application-core/README.md)
+- [Implementation](03-mars-moons-application-core/mars_moon_core.py)
+- [Tests](03-mars-moons-application-core/test_mars_moon_core.py)
+
+> [!TIP]
+> Complete Mars02 (Exercise 3) before EarlyBird12. The small application core principles demonstrated here apply directly to larger systems.
+
 ---
+
+## Running the Code
+
+**Mars Moon Calculator (Exercise 3):**
+
+```bash
+# From repository root
+python mars_moon_core.py
+
+# Or from exercise directory
+cd 03-mars-moons-application-core
+python mars_moon_core.py
+```
+
+**Requirements:**
+- Python 3.9 or higher
+- No external dependencies (uses only Python standard library)
+
+**Running Tests:**
+
+```bash
+cd 03-mars-moons-application-core
+python -m pytest test_mars_moon_core.py
+```
+
+> [!NOTE]
+> The wrapper script at repository root automatically creates a virtual environment if needed.
 
 ## Directory Structure
 
-```bash
+```
 Mars/
 ├── README.md                                  # This file
-├── CLAUDE.md                                  # Clean Markdown refactoring guide
-├── Mars.csproj                                # Project file
+├── mars_moon_core.py                          # Wrapper script
 ├── 01-architecture-real-life-story/
-│   ├── architectural-principles-analysis.md   # SOLID principles violations & fixes
+│   ├── architectural-principles-analysis.md   # ArchitecturalQuality10
 │   └── class-group-exercise-architecture-real-life-story.pdf
 ├── 02-climate-model-analysis/
-│   ├── climate-model-analysis.md              # Stability & dependency analysis
+│   ├── climate-model-analysis.md              # ArchitecturalQuality08
 │   └── group-exercise-climate-model.pdf
 └── 03-mars-moons-application-core/
-    ├── application-core-design.md             # Clean architecture pipeline
+    ├── README.md                              # Detailed architecture docs
+    ├── mars_moon_core.py                      # Mars02 implementation
+    ├── test_mars_moon_core.py                 # Test suite
     └── home-exercise-and-case-study.pdf
 ```
 
 ## Key Learning Outcomes
 
-- **Architectural Principles:** SRP, CCP, CRP, OCP, DIP, SDP, SAP
-- **Dependency Management:** Stable dependencies, change frequency analysis, SDP violations
-- **Application Core Design:** Component decomposition, stateless design, pure functions
-- **Domain Modeling:** Mars time system (25h × 100min/day), interval calculations, edge cases
-- **C4 Diagrams:** System visualization with Mermaid (GitHub-native rendering)
+**Architectural Principles:**
+- SRP (Single Responsibility Principle)
+- CCP (Common Closure Principle)
+- CRP (Common Reuse Principle)
+- OCP (Open-Closed Principle)
+- DIP (Dependency Inversion Principle)
+- SDP (Stable Dependencies Principle)
+- SAP (Stable Abstractions Principle)
 
----
-
-Quick run from repository root
-
-- Activate your Python venv at the repository root, then run:
-  - python3 mars_moon_core.py
-  - or run tests: (from Mars/03-mars-moons-application-core) python3 -m unittest -v
-
-Notes
-
-- The actual implementation lives under 03-mars-moons-application-core. A small root-level shim (mars_moon_core.py) delegates to that file so the above command works from the repository root.
-- Because the root shim shares the same module name, run `python -m unittest` from inside `03-mars-moons-application-core` (or set `PYTHONPATH` accordingly) so tests import the real module rather than the shim.
-
-One-time automatic Python setup (no manual clicking in Rider)
-
-If you want this to be fully automatic per solution folder, run this once from the repository root:
-
-- python3 setup-python-venv.py Mars/03-mars-moons-application-core
-- or (if executable) ./setup-python-venv Mars/03-mars-moons-application-core
-
-This creates Mars/03-mars-moons-application-core/venv using your current Python. After that you can either:
-- source Mars/03-mars-moons-application-core/venv/bin/activate
-- or in Rider/PyCharm, select the interpreter at Mars/03-mars-moons-application-core/venv/bin/python3
-
-Tip: The root shim mars_moon_core.py will also auto-create that venv on first run if it’s missing.
-
-Rider run configuration (shared)
-
-- `.run/python3.14.run.xml` is checked in and already points to `$PROJECT_DIR$/Mars/03-mars-moons-application-core/venv/bin/python3`.
-- Open **Run | Run…** and choose `python3.14` – Rider does not ask you to pick a module anymore because the interpreter and working directory are pre-wired.
-- For any new `.sln`/solution folder, run `python3 setup-python-venv.py <path-to-solution>` once and copy the `.run` template if you want the same zero-click interpreter wiring.
-- Upgrading to the newest Homebrew/Python.org build is just `brew upgrade python` (or installer) followed by `python3 setup-python-venv.py Mars/03-mars-moons-application-core --recreate` to rebuild the venv so every new `.sln` can reuse the same automation.
+**Skills:**
+- Dependency management and stability analysis
+- Change frequency analysis
+- Application core design with pure functions
+- Domain modeling (Mars time system: 25h × 100min/day)
+- Component decomposition
+- Stateless design patterns
