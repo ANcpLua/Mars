@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+
+# IDEs
+.idea/
+.vscode/
+.DS_Store
+*.swp
+*.swo
+*~
+.run/
+
+# Build artifacts
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+
+# .NET
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Test results
+.pytest_cache/
+htmlcov/
+.coverage
+*.cover
